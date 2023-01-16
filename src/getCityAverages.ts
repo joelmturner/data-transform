@@ -1,17 +1,17 @@
-import { CityData } from "./fixtureData";
+import { CityData } from "./types";
 
 type ChartDatum = {
     city: string;
     temperature: number;
     happinessIndex: number;
-}
+};
 
 type ReductionData = {
     [key: string]: {
         temperature: number[];
         happinessIndex: number[];
-    }
-}
+    };
+};
 
 // This function takes an array of numbers and returns the average of those numbers.
 // It does this by adding all of the numbers together and dividing by the number of numbers
@@ -31,7 +31,7 @@ function combineData(dataToConvert: CityData[]): ReductionData {
         converted[city].temperature.push(temperature);
         converted[city].happinessIndex.push(happinessIndex);
         return converted;
-    }, {} as ReductionData)
+    }, {} as ReductionData);
 }
 
 // This function takes a combined data object and returns an array of objects with the average
@@ -42,8 +42,8 @@ function convertData(combinedData: ReductionData): ChartDatum[] {
             city,
             temperature: average(temperature),
             happinessIndex: average(happinessIndex),
-        }
-    })
+        };
+    });
 }
 
 // This function takes a list of city data objects and returns a list of chart datum objects.
