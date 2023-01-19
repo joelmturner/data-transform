@@ -1,6 +1,5 @@
 import { CityData } from "./types";
 
-// create dataset using CityData type with the following cities: Portland, Seattle, Juneau, Sacramento, and San Francisco
 export const cityData: CityData[] = [
     { city: "Portland", date: "2019-01-01", temperature: 32, happinessIndex: 5 },
     { city: "Portland", date: "2019-01-02", temperature: 36, happinessIndex: 4 },
